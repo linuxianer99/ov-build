@@ -1,0 +1,40 @@
+header:
+  # The `version` entry in the header describes for which configuration
+  # format version this file was created for. It is used by kas to figure
+  # out if it is compatible with this file. The version is an integer that
+  # is increased on every format change.
+  version: 10
+# The machine as it is written into the `local.conf` of bitbake.
+machine: openvario-7-PQ070
+# The distro name as it is written into the `local.conf` of bitbake.
+distro: ovlinux
+build_system: oe
+target: openvario-image
+
+
+defaults:
+  repos:
+    refspec: "hardknott"
+
+repos:
+   poky:
+     url: "git://git.yoctoproject.org/poky.git"
+     layers:
+       meta-poky:
+       meta:
+
+   meta-openembedded:
+     url: "git://git.openembedded.org/meta-openembedded.git"
+     path: "poky/meta-openembedded"
+     layers:
+       meta-oe:
+       meta-python:
+       meta-networking:
+
+   meta-sunxi:
+     url: "git://github.com/linux-sunxi/meta-sunxi.git"
+     path: "poky/meta-sunxi"
+
+   meta-openvario:
+     url: "https://github.com/Openvario/meta-openvario.git"
+     path: "poky/meta-openvario"
