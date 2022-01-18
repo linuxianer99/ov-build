@@ -24,6 +24,7 @@ jobs:
 
     container: 
       image: ghcr.io/linuxianer99/ovbuild-container-kas
+      options: --user 1001
       env: 
         KAS_TARGET: sensord
         
