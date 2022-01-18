@@ -18,9 +18,15 @@ jobs:
   # This workflow contains a single job called "build"
   configure_source_tree:
     name: Configure source tree
+    
     # The type of runner that the job will run on
     runs-on: self-hosted
 
+    container: 
+      image: ovbuild-container-kas
+      env: 
+        KAS_TARGET: sensord
+        
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -28,9 +34,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Buildup source tree
-        run: docker run --rm -v $(pwd):/workdir ovbuild-container-kas --workdir=/workdir kas checkout openvario.yml
+        run: kas checkout openvario.yml
         
       - name: Build sensord
-        run: docker run --rm -v $(pwd):/workdir ovbuild-container-kas --workdir=/workdir kas build openvario.yml
-        env:
-          KAS_TARGET: sensord 
+        run: kas build openvario.yml
