@@ -23,7 +23,7 @@ jobs:
     runs-on: self-hosted
 
     container: 
-      image: ovbuild-container-kas
+      image: ghcr.io/linuxianer99/ovbuild-container-kas
       env: 
         KAS_TARGET: sensord
         
@@ -36,5 +36,5 @@ jobs:
       - name: Buildup source tree
         run: kas checkout openvario.yml
         
-      - name: Build sensord
-        run: kas build openvario.yml
+      #- name: Build sensord
+      #  run: kas build openvario.yml
