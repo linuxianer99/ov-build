@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  configure_source_tree:
+  Build_Image:
     name: Configure source tree
     
     # The type of runner that the job will run on
@@ -36,5 +36,5 @@ jobs:
       - name: Buildup source tree
         run: kas checkout openvario.yml
         
-      #- name: Build sensord
-      #  run: kas build openvario.yml
+      - name: Build sensord
+        run: kas build openvario.yml
