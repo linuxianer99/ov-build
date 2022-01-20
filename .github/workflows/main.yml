@@ -5,7 +5,7 @@ name: Build image
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
+  #push:
     #branches: [ main ]
   #pull_request:
   #  branches: [ main ]
@@ -25,7 +25,8 @@ jobs:
         machine: [openvario-57-lvds]
         #machine: [openvario-57-lvds, openvario-7-CH070, openvario-7-PQ070]
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    #runs-on: self-hosted
+    runs-on: ubuntu-20.04
 
     container: 
       image: ghcr.io/linuxianer99/ovbuild-container-kas
