@@ -17,7 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   Build_Image:
-    name: Configure source tree
+    name: Build image
     
     strategy:
       matrix:
